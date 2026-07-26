@@ -4,14 +4,39 @@
 
 :root {
   font-family: "Manrope", "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #f7f8f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
 html,
 body,
 #root {
   min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  background: #f7f8f6;
+}
+
+::selection {
+  background: #a7f3d0;
+  color: #0f172a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
