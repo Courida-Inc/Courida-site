@@ -63,7 +63,7 @@ jobs:
           fixture_dir="$(mktemp -d)"
           trap 'rm -rf "${fixture_dir}"' EXIT
 
-          printf 'access_key = "AKIA%s"\n' "$(openssl rand -hex 8 | tr '[:lower:]' '[:upper:]')" > "${fixture_dir}/aws.txt"
+          printf 'access_key = "AKIA%s"\n' "$(openssl rand -hex 8 | tr 'abcdef0189' 'ABCDEF2233')" > "${fixture_dir}/aws.txt"
           printf 'token = "ghp_%s"\n' "$(openssl rand -hex 18)" > "${fixture_dir}/github.txt"
           printf 'token = "xoxb-123456789012-123456789012-%s"\n' "$(openssl rand -hex 12)" > "${fixture_dir}/slack.txt"
 
