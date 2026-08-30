@@ -89,4 +89,4 @@ jobs:
           assert_detection "${fixture_dir}/slack.txt" "messaging-token"
 
       - name: Scan repository history
-        run: /tmp/gitleaks git --redact --no-banner .
+        run: /tmp/gitleaks git --log-opts=HEAD --redact --no-banner .
